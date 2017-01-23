@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+.table th, 
+.table td { 
+
+  padding: 0.5rem 2rem;
+}
+
+.table th { 
+  padding: 0.2em; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+</style>
+</head>
+<body >
+
+<div class="container content" style="max-width:1800px;margin-top:80px">    
+ 
+  <div class="row">
+    
+    <div class="col-md-3">
+    
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center">
+         
+<img src="http://localhost:2017/Backend/resources/images/{{currentUser.username}}" class="img-rounded" style="height:106px;width:106px" alt="upload Image"></p>
+         <hr>
+<p><a href="#/uploadPicture" class="btn btn-primary">Upload Picture</a></p>
+         <p><span class="glyphicon glyphicon-user"></span>{{currentUser.username}}</p>
+         <p><i class="glyphicon glyphicon-briefcase"></i>{{currentUser.role}}</p>
+         <p><span class="glyphicon glyphicon-map-marker"></span>{{currentUser.place}}</p>
+         <p><span class="glyphicon glyphicon-envelope"></span> {{currentUser.email}}</p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="btn-group-vertical" role="group" aria-label="...">
+
+
+<a href="#/pendingRequest" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-user"></i><span class="glyphicon glyphicon-plus"></span>Pending Friend Requests</a>
+  <a href="#/getAllJobs" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-briefcase"></i>View All Jobs</a>
+  <a href="#/friendsList" class="btn btn-primary btn-block">Friends List</a>
+
+</div>
+      
+      </div>
+       
+           
+      <div class="col-md-8">
+      Pending Requests 
+<table class="table table-condensed table-responsive">
+<tr ng-repeat="p in pendingRequest">
+<td style="height:100px; width:100px;"><img src="http://localhost:2017/Backend/resources/images/{{p.fromId}}" class="img-rounded" style="height:100px; width:100px;">{{p.fromId}}</td>
+
+<td><a href="" ng-click="updatePendingRequest(p.fromId,'A')" class="btn btn-xs btn-primary">Accept</a></td>
+<td><a href="" ng-click="updatePendingRequest(p.fromId,'D')" class="btn btn-xs btn-primary">Deny</a></td>
+</tr>
+
+</table>
+     
+      </div></div>
+     </div>
+    </body></html>

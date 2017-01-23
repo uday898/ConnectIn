@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body >
+
+<div class="container content" style="max-width:1800px;margin-top:80px">    
+ 
+  <div class="row">
+    
+    <div class="col-md-3">
+    
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center">
+         
+<img src="http://localhost:2017/Backend/resources/images/{{currentUser.username}}" class="img-rounded" style="height:106px;width:106px" alt="upload Image"></p>
+         <hr>
+<p><a href="#/uploadPicture" class="btn btn-primary">Upload Picture</a></p>
+         <p><span class="glyphicon glyphicon-user"></span>{{currentUser.username}}</p>
+         <p><i class="glyphicon glyphicon-briefcase"></i>{{currentUser.role}}</p>
+         <p><span class="glyphicon glyphicon-map-marker"></span>{{currentUser.place}}</p>
+         <p><span class="glyphicon glyphicon-envelope"></span> {{currentUser.email}}</p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="btn-group-vertical" role="group" aria-label="...">
+
+
+<a href="#/pendingRequest" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-user"></i><span class="glyphicon glyphicon-plus"></span>Pending Friend Requests</a>
+  <a href="#/getAllJobs" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-briefcase"></i>View All Jobs</a>
+  <a href="#/friendsList" class="btn btn-primary btn-block">Friends List</a>
+
+</div>
+      
+      </div>
+       
+      <div class="col-md-8" >
+      
+           <div class="jumbotron">
+<div class="row">
+List Of Friends
+</div>   
+<div class="row" ng-hide="friends.length">
+<hr>No Friends Available
+</div>
+      <table class="table table-condensed table-responsive">
+<tr ng-repeat="f in friends">
+<td style="height:100px; width:100px;" ng-hide="currentUser.username==f.fromId"><img src="http://localhost:2017/Backend/resources/images/{{f.fromId}}" class="img-rounded" style="height:100px; width:100px;">{{f.fromId}}</td>
+<td style="height:100px; width:100px;" ng-hide="currentUser.username==f.toId"><img src="http://localhost:2017/Backend/resources/images/{{f.toId}}" class="img-rounded" style="height:100px; width:100px;">{{f.toId}}</td>
+<td><a href="#/chat" class="btn btn-primary">chat</a></td>
+<td><a ng-hide="currentUser.username==f.fromId" href="" ng-click="updateFriendf(f.fromId,'B')" class="btn btn-xs btn-primary">Block</a></td>
+<td><a ng-hide="currentUser.username==f.toId" href="" ng-click="updateFriendt(f.toId,'B')" class="btn btn-xs btn-primary">Block</a></td>
+</tr>
+</table>
+<br><br>
+<div class="row" ng-show="blocked.length">
+Friends Blocked by You
+</div>
+<table class="table table-condensed table-responsive" >
+<tr ng-repeat="b in blocked">
+<td style="height:100px; width:100px;" ng-hide="currentUser.username==b.fromId"><img src="http://localhost:2017/Backend/resources/images/{{b.fromId}}" class="img-rounded" style="height:100px; width:100px;">{{b.fromId}}</td>
+<td ng-hide="currentUser.username==b.toId"><img src="http://localhost:2017/Backend/resources/images/{{b.toId}}" class="img-rounded" style="width:20px">{{b.toId}}</td>
+<td><a ng-hide="currentUser.username==b.fromId" href="" ng-click="updateFriendf(b.fromId,'D')" class="btn btn-xs btn-primary">UnBlock</a></td>
+<td><a ng-hide="currentUser.username==b.toId" href="" ng-click="updateFriendt(b.toId,'D')" class="btn btn-xs btn-primary">UnBlock</a></td>
+</tr>
+</table>
+     
+      </div></div></div>
+     </div>
+    </body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Blog</title>
+</head>
+<body>
+<br><br><br><br>  <h3><b>{{blogPost.title}}</b></h3>
+<div class="w3-card-4 w3-margin w3-white">
+  <div class="container w3-padding-8">
+ <img src="http://localhost:2017/Backend/resources/images/{{blogPost.createdBy.username}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+
+    <h3>{{blogPost.createdBy.username}}</h3>
+    <h5><span class="w3-opacity">{{blogPost.createdOn | date:'medium'}}</span></h5>
+  </div>
+
+  <div class="w3-container">
+    <p> {{blogPost.body}}</p>
+    <div class="w3-row">
+      <div class="w3-col m8 s12">
+       <p><a href="" ng-click="getComments(blogPost.id)" class="btn btn-default"><b>Show Comments</b></a></p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  <div ng-show="showComments" class="jumbotron" style="background-color:white; padding-top:5px; padding-bottom:5px; padding-left:15px;"> 
+
+<div ng-repeat="comment in comments |orderBy:'-createdOn':true ">
+<div class="container">
+
+<h4><img src="http://localhost:2017/Backend/resources/images/{{comment.createdBy.username}}" class="w3-left w3-circle w3-margin-right" style="width:40px">
+{{comment.createdBy.username}}<small> on {{comment.createdOn | date:'medium'}}</small></h4>
+<div class="media">
+ 
+  <div class="media-body">
+   
+    {{comment.body}}
+    <hr>
+  </div>
+</div>
+</div> 
+</div></div>
+
+</div>
+<div class="row">
+<form>
+<input type="text" ng-model="blogPost.id" hidden="true">
+<div class="col-sm-3 col-md-3 col-lg-2">
+<textarea required ng-model="comment.body"></textarea>
+<button ng-click="addComment()" class="btn btn-primary btn-block">Post Comment</button>
+</div>
+</form>
+</div>
+</body>
+</html>

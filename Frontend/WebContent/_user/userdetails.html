@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #003865;
+}
+</style>
+</head>
+<body ><br><br>
+
+<div class="container">
+					<div class="row">
+					<div class="col-md-3"></div>
+									<div class="col-md-4">
+		      <div class="pro-info">
+			  <img src="http://localhost:2017/Backend/resources/images/{{user1.username}}" class="img-rounded" style="width:500px;">
+			        <div class="profile-pic wthree" style="color:brown;">
+						
+						<h2>{{user1.username}}</h2>
+						<p>{{user1.place}}</p>
+							
+					</div></div>
+					
+					
+			
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-md-3"></div>
+									<div class="col-md-4"><br>
+									<h1><span class="glyphicon glyphicon-globe" style="color:white;">About</span></h1>	
+			<ul class="menu" style="color:white;">
+				<h2>{{user1.username}}</h2>
+				<li><span class="glyphicon glyphicon-briefcase"></span> {{user1.role}}</li>
+				<li><a href="#"><span class="glyphicon glyphicon-map-marker"></span>{{user1.place}}</a></li>
+				<li><a href="mailto:gurdeepjawaddi94@gmail.com"><span class="glyphicon glyphicon-envelope"></span>Email:{{user1.email}}</a></li>
+				
+			</ul></div></div>
+					
+					
+					
+					
+				</div></body></html>

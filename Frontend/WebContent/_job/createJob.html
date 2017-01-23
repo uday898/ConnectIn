@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<body >
+
+<div class="container content" style="max-width:1800px;margin-top:80px">    
+ 
+  <div class="row">
+    
+    <div class="col-md-3">
+    
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center">
+         
+<img src="http://localhost:2017/Backend/resources/images/{{currentUser.username}}" class="img-rounded" style="height:106px;width:106px" alt="upload Image"></p>
+         <hr>
+<p><a href="#/uploadPicture" class="btn btn-primary">Upload Picture</a></p>
+         <p><span class="glyphicon glyphicon-user"></span>{{currentUser.username}}</p>
+         <p><i class="glyphicon glyphicon-briefcase"></i>{{currentUser.role}}</p>
+         <p><span class="glyphicon glyphicon-map-marker"></span>{{currentUser.place}}</p>
+         <p><span class="glyphicon glyphicon-envelope"></span> {{currentUser.email}}</p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="btn-group-vertical" role="group" aria-label="...">
+
+
+<a href="#/getBlogDetail/{{blogPost.id}}" class="btn btn-primary btn-lg">Pending Requests</a>
+  <a href="#/getBlogDetail/{{blogPost.id}}" class="btn btn-primary btn-lg">Middle</a>
+  <a href="#/getBlogDetail/{{blogPost.id}}" class="btn btn-primary btn-lg">Right</a>
+
+</div>
+      
+      </div>
+       
+           
+      <div class="col-md-8">
+     <form>
+<table>
+<tr>
+<td>Job Title</td>
+<td><input type="text" ng-model="job.jobTitle"></td>
+</tr>
+
+<tr>
+<td>Job Description</td>
+<td><textarea ng-model="job.jobDescription"></textarea></td>
+</tr>
+
+
+<tr>
+<td>Skills Required</td>
+<td><input type="text" ng-model="job.skillsRequired"></td>
+</tr>
+
+
+<tr>
+<td>Salary</td>
+<td><input type="text" ng-model="job.salary"></td>
+</tr>
+
+<tr>
+<td>location</td>
+<td><input type="text" ng-model="job.location"></td>
+</tr>
+
+<tr><td>
+<input type="submit" value="Post Job" ng-click="saveJob()">
+</td>
+</tr>
+
+</table>
+</form>
+      
+      </div></div></div>
+     
+    </body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+<div class="container">
+					<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<div class="card card-signup">
+								<div class="header header-primary text-center">
+									<h4>Sign Up</h4>
+									
+								</div>
+								<p class="text-divider">{{errorMessage}}</p>
+								<div class="content">
+
+									<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+								      		<input type="text" class="form-control" ng-model="user.username" id="login_username" placeholder="Username">
+								    	</div>
+								    	</div>
+							
+										<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+								      		<input type="password" class="form-control" ng-model="user.password" id="password" placeholder="Password">
+								    	</div>
+								    	</div>
+								    	
+								    	<div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+								      		<input type="text" class="form-control" ng-model="user.email" placeholder="Email Id">
+								    	</div>
+								    	</div>
+								    	
+								    	 <div class="form-group">
+								    	<div class="input-group">
+								      		<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+								      		<input type="text" class="form-control" ng-model="user.place"  placeholder="State,Country">
+								    	</div>
+								    	</div>
+								    	
+	
+<h5><td>Role:</td>
+<input type="radio" ng-model="user.role" value="STUDENT">Student
+<input type="radio" ng-model="user.role" value="ALUMNI">Alumni
+<input type="radio" ng-model="user.role" value="EMPLOYEE">Employee</td>
+</h5>
+								    	
+								    	
+								    	<button type="button" style="background-color:#9c27b0;" class="btn btn-block btn-lg" ng-click="registerUser()">Sign UP</button>
+						  			
+
+
+</body>
+</html>

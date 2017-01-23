@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<body >
+
+<div class="container content" style="max-width:1800px;margin-top:80px">    
+ 
+  <div class="row">
+    
+    <div class="col-md-3">
+    
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center">
+         
+<img src="http://localhost:2017/Backend/resources/images/{{currentUser.username}}" class="img-rounded" style="height:106px;width:106px" alt="upload Image"></p>
+         <hr>
+<p><a href="#/uploadPicture" class="btn btn-primary">Upload Picture</a></p>
+         <p><span class="glyphicon glyphicon-user"></span>{{currentUser.username}}</p>
+         <p><i class="glyphicon glyphicon-briefcase"></i>{{currentUser.role}}</p>
+         <p><span class="glyphicon glyphicon-map-marker"></span>{{currentUser.place}}</p>
+         <p><span class="glyphicon glyphicon-envelope"></span> {{currentUser.email}}</p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="btn-group-vertical" role="group" aria-label="...">
+
+
+<a href="#/pendingRequest" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-user"></i><span class="glyphicon glyphicon-plus"></span>Pending Friend Requests</a>
+  <a href="#/getAllJobs" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-briefcase"></i>View All Jobs</a>
+  <a href="#/friendsList" class="btn btn-primary btn-block">Friends List</a>
+
+</div>
+      
+      </div>
+       
+           
+      <div class="col-md-8">
+      <div class="row">
+      <div class="col-md-4">
+      <a href="#/addPost" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-pencil"></span>New Post</a>
+     </div> </div><br>
+  Search By Title:
+<input type="text" ng-model="search.title">
+Search By Author
+<input type="text" ng-model="search.createdBy.username">
+      <div ng-repeat="blogPost in blogPosts | orderBy:'createdOn':true | filter:search">
+
+  
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <img src="http://localhost:2017/Backend/resources/images/{{blogPost.createdBy.username}}"  class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="pull-right opacity">{{blogPost.createdOn | date:'medium'}}</span>
+        <h4><a href="#/getUserDetail/{{blogPost.createdBy.username}}">{{blogPost.createdBy.username}}</a></h4><br>
+        <b>{{blogPost.title}}</b>
+        <hr class="clear">
+        <p> {{blogPost.body}}</p>
+         <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p> <a href="#/getBlogDetail/{{blogPost.id}}" class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black">Read More</a></p>
+        </div>
+       
+
+        
+      </div>
+      </div>
+      
+      </div></div></div>
+     </div>
+    </body></html>

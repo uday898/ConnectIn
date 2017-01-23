@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+td {
+  padding: 0.5rem;
+}
+</style></head>
+
+<body >
+
+<div class="container content" style="max-width:1800px;margin-top:80px">    
+ 
+  <div class="row">
+    
+    <div class="col-md-3">
+    
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center">
+         
+<img src="http://localhost:2017/Backend/resources/images/{{currentUser.username}}" class="img-rounded" style="height:106px;width:106px" alt="upload Image"></p>
+         <hr>
+<p><a href="#/uploadPicture" class="btn btn-primary">Upload Picture</a></p>
+         <p><span class="glyphicon glyphicon-user"></span>{{currentUser.username}}</p>
+         <p><i class="glyphicon glyphicon-briefcase"></i>{{currentUser.role}}</p>
+         <p><span class="glyphicon glyphicon-map-marker"></span>{{currentUser.place}}</p>
+         <p><span class="glyphicon glyphicon-envelope"></span> {{currentUser.email}}</p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="btn-group-vertical" role="group" aria-label="...">
+
+
+<a href="#/pendingRequest" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-user"></i><span class="glyphicon glyphicon-plus"></span>Pending Friend Requests</a>
+  <a href="#/getAllJobs" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-briefcase"></i>View All Jobs</a>
+  <a href="#/friendsList" class="btn btn-primary btn-block">Friends List</a>
+
+</div>
+      
+      </div>
+       
+           
+      <div class="col-md-8">
+      List of Users
+<div >
+<table class="table  table-condensed table-responsive"> 
+<tr><th>USERNAME</th><th>ISONLINE</th><th></th><th></th></tr>
+<tr ng-repeat="u in users">
+<td style="height:100px; width:100px;"><img src="http://localhost:2017/Backend/resources/images/{{u.username}}" class="img-rounded" style="height:100px; width:100px;"><span style="color:blue;">{{u.username}}</span></td>
+<td ng-if="u.online">Yes</td>
+<td ng-if="!u.online">No</td>
+
+<td><a href="#/getUserDetail/{{u.username}}" class="btn btn-xs btn-primary">View Profile</a></td>
+<td><a href="" ng-click="friendRequest(u.username)" class="btn btn-xs btn-primary">Send Friend Request</a></td>
+</tr>
+</table>
+<table class="table table-condensed table-responsive" ng-show="sentusers.length">
+
+<tr ng-repeat="user in sentusers" >
+<td  style="height:100px; width:100px;"><img src="http://localhost:2017/Backend/resources/images/{{user.username}}" class="img-rounded" style="height:100px; width:100px;"><span style="color:blue">{{user.username}}</span></td>
+<td ng-if="user.online">Yes</td>
+<td ng-if="!user.online">No</td>
+<td><a href="#/getUserDetail/{{user.username}}" class="btn btn-xs btn-primary">View Profile</a></td>
+<td><a href="" class="btn btn-xs btn-primary" >Request Sent</a></td>
+</tr>
+</table>`
+</div>
+      
+     
+      </div></div>
+     </div>
+    </body></html>

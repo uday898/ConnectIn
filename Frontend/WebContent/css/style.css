@@ -1,0 +1,117 @@
+
+/*-- Header-StSarts-Here --*/
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/*-- Navbar-Starts-Here --*/
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: transparent;
+    z-index: 99999;
+}
+.navbar {
+    margin-bottom: 0;
+    border: none;
+    z-index: 99999;
+    border-radius: 0;
+    
+}
+.navbar-inverse .navbar-brand {
+    color: #EEE;
+}
+.navbar-nav1{
+	width:10%;
+}
+
+
+.navbar-right{
+	width:20%;
+}
+.navbar-brand {
+    font-size: 45px;
+    font-family: 'FjallaOne-Regular';
+    line-height: 23px;
+    letter-spacing: 1px;
+}
+
+.navbar-inverse {
+    background-color: #9c27b0;
+    border-color: transparent;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #EEE;
+}
+.navbar-nav > li > a {
+    font-family: 'Montserrat-Regular';
+    font-size: 20px;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #9c27b0;
+    background-color: #eee;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #333;
+    background-color: #EEE;
+}
+
+/*-- Dropdown-Menu --*/
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+    display: block;
+    margin: 0;
+}
+.dropdown-menu {
+    min-width: 145px;
+    background-color: #333;
+    top: 98%;
+}
+ul.dropdown-menu.dropdown1 {
+    text-align: center;
+    padding: 0;
+    top: 98%;
+}
+ul.dropdown-menu.dropdown-menu2 {
+    width: 165px;
+}
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0;
+}
+.navbar-right .dropdown-menu {
+    right: 0;
+    left: -1px;
+}
+.dropdown-menu > li > a {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #EEE;
+    font-family: 'Montserrat-Regular';
+}
+.dropdown-menu > li > a:hover {
+    color: #9c27b0;
+}
+.caret {
+    float: right;
+    margin-top: 10px;
+}
+
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    border-color: transparent;
+}
+/*-- //Dropdown-Menu --*/
+}
+/*-- //Navbar-Ends-Here --*/
+}
+

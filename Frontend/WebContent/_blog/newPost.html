@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Post</title>
+</head>
+<body>
+<br><br><br>
+<div class="row">
+
+              
+
+
+                    <h1>Add a Post</h1>
+
+        </div>          
+
+<form>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="form_name">Title</label>
+                    <input ng-model="blogPost.title" type="text" class="form-control" placeholder="Title" required="required">
+                    
+                </div>
+            </div>
+       </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <label>Content</label></div></div>
+                    <textarea   rows="10"  ng-model="blogPost.body"></textarea>
+                   
+                
+            <br>
+            <div class="col-md-4">
+            <button type="button"  class="btn btn-block btn-primary" ng-click="submit()">Post</button>
+               
+            </div>
+
+</form>
+
+</body>
+</html>
